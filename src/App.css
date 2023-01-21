@@ -1,0 +1,30 @@
+.nav{
+    background-color: rgba(255,255,255,0.5);
+}
+
+.hero{
+    margin-top: -60px;
+    width: 100%;
+}
+
+.Regimage{
+    padding-left: 10%;
+}
+
+.register{
+    /* Created with https://www.css-gradient.com */
+    /* Created with https://www.css-gradient.com */
+    /* background: #FE7FD1;
+    background: -webkit-linear-gradient(top right, #FE7FD1, #7C9CD0);
+    background: -moz-linear-gradient(top right, #FE7FD1, #7C9CD0);
+    background: linear-gradient(to bottom left, #FE7FD1, #7C9CD0); */
+}
+
+.cards{
+    padding-top: 7vh;
+    height: 80vh;
+}
+
+.cardHeading{
+    padding-bottom: 50px;
+}
