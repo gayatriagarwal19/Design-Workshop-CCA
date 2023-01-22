@@ -10,12 +10,44 @@ import wdct from './assets/images/wdct1.png';
 import wdctCorner from './assets/images/WDCTCorner.png';
 import interview from './assets/images/undraw_interview.png';
 import certificate from './assets/images/Certificate.png';
+import hamburger_btn from './assets/images/hamburger_btn.png';
+
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 function App() {
   return (
     <>
     <div id='home'>
+
+    <Navbar collapseOnSelect   variant="dark"  className="navbar">
+      <Navbar.Brand href="#home" className='navbar-brand'>
+      <img className='cca-logo' variant="top" src={cca} />
+      <img className='wdct-logo' variant="top" src={wdct} />
+      </Navbar.Brand>
+      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+      <Navbar.Collapse id="responsive-navbar-nav">
+        <Nav className="ms-auto nav-dropdown">
+          {/* <Nav.Link href="#features">Features</Nav.Link>
+          <Nav.Link href="#pricing">Pricing</Nav.Link> */}
+          <NavDropdown title={<img className="thumbnail-image" 
+                            src={hamburger_btn} 
+                            alt="user pic"
+                        />} id="collasible-nav-dropdown">
+            <NavDropdown.Item href="#action/3.1">Description</NavDropdown.Item>
+            <NavDropdown.Item href="#action/3.3">Mentor</NavDropdown.Item>
+            <NavDropdown.Divider />
+            <NavDropdown.Item href="#action/3.4">
+             Coordinators
+            </NavDropdown.Item>
+          </NavDropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
+
+
       <div className='hero'>
         <div className='heroText'>
           <h1 textAlign="center" align="center">Design Workshop</h1>
@@ -23,7 +55,7 @@ function App() {
         </div>
         <div>
           <Button className='px-5 py-3 mt-4 mx-2' size="md" variant="outline-info">Learn More</Button>{' '}
-          <Button className='px-5 py-3 mt-4 mx-2' size="md" variant="outline-info">Register</Button>{' '}
+          <Button className='px-5 py-3 mt-4 mx-2' size="md" variant="info">Register</Button>{' '}
         </div>
       </div>
     </div>
@@ -160,6 +192,9 @@ function App() {
         </Card>
         </Col>
       </Row>
+    </div>
+    <div className="footer footer-text">
+    <p>Made with 💓 by Web Design & Creative Team, CCA.</p>
     </div>
     </>
   );
