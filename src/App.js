@@ -10,6 +10,11 @@ import wdct from './assets/images/wdct1.png';
 import wdctCorner from './assets/images/WDCTCorner.png';
 import interview from './assets/images/undraw_interview.png';
 import certificate from './assets/images/Certificate.png';
+import sayan from './assets/images/SAYAN_MAJUMDER.png';
+import somwrik from './assets/images/SOMWRIK_DUBEY.png';
+import swarnalim from './assets/images/swarnalim_sonowal.png';
+import saikat from './assets/images/SAIKAT_SARKAR.png';
+import neeladri from './assets/images/NEELADRI_DHAR.png';
 
 
 function App() {
@@ -29,21 +34,21 @@ function App() {
     </div>
     <div className='container'>
       <div className='description'>
-        <h2>Description</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
+        <h2 className='pb-3'>Description</h2>
+        <p className='descTxt pb-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
       </div>
       <div className='details'>
         <div className='day'>
-            <p>Day1: </p>
+            <p className='descTxt pe-5'>Day1: </p>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
         </div>
         <div className='day'>
-            <p>Day2: </p>
+            <p className='descTxt pe-5'>Day2: </p>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
         </div>
       </div>
-      <div className='description'>
-        <h2>What’s in for you</h2>
+      <div className='description py-5'>
+        <h2 className='pb-3'>What’s in for you</h2>
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
       </div>
       <Row>
@@ -84,76 +89,78 @@ function App() {
         </Card>
         </Col>
       </Row>
-      <div className='description'>
+      <div className='description pt-5 pb-5'>
         <h2>Mentor</h2>
       </div>
-      <div className='mentor'>
-        <div>
-          <div>
-            <img></img>
-          </div>
-          <div>
+      <Row className='mentor'>
+        <Col sm={5} className='mentor1'>
+          <Row>
+          <Col sm={6}>
+            <img src={sayan}/>
+          </Col>
+          <Col sm={6}>
             <h3>Sayan Majumder</h3>
             <h4>Head, WDCT,CCA</h4>
             <h3>Be In</h3>
-          </div>
-        </div>
-        <div>
+          </Col>
+          </Row>
+        </Col>
+        <Col sm={7} className='mentor2'>
           <p>
           Every firm has stories to tell—stories that will not only engage, inform, surprise, delight, and impact their audience, but that will also deliver on measurable goals. And I am the conduit between the firm and consumer.
           </p>
           <p>
             I help clients find the subject and medium that best fits their unique identity, and then I produce high-quality content that meets their objectives.
           </p>
-        </div>
-      </div>
-      <div className='description'>
+        </Col>
+      </Row>
+      <div className='description pt-5 pb-5'>
         <h2>Coordinators</h2>
       </div>
       <Row>
         <Col sm={3}>
-        <Card className='coordinatorCard' style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card className='coordinatorCard pb-5' style={{ width: '18rem' }}>
+          <Card.Img variant="top" className='coordinatorImg' src={somwrik}/>
           <Card.Body>
-            <Card.Title align='center'>Somwrik Dubey</Card.Title>
+            <Card.Title align='center' className='coordinatorName'>Somwrik Dubey</Card.Title>
             <Card.Text align='center'>
-            Senior member
+            Senior member<br/>
             WDCT,CCA
             </Card.Text>
           </Card.Body>
         </Card>
         </Col>
         <Col sm={3}>
-        <Card className='coordinatorCard' style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card className='coordinatorCard pb-5' style={{ width: '18rem' }}>
+          <Card.Img variant="top" className='coordinatorImg' src={swarnalim} />
           <Card.Body>
-            <Card.Title align='center'>Swarnalim Sonowal</Card.Title>
+            <Card.Title align='center' className='coordinatorName'>Swarnalim Sonowal</Card.Title>
             <Card.Text align='center'>
-            Senior member
+            Senior member<br/>
             WDCT,CCA
             </Card.Text>
           </Card.Body>
         </Card>
         </Col>
         <Col sm={3}>
-        <Card className='coordinatorCard' style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card className='coordinatorCard pb-5' style={{ width: '18rem' }}>
+          <Card.Img variant="top" className='coordinatorImg' src={neeladri} />
           <Card.Body>
-            <Card.Title align='center'>Neeldari Dhar</Card.Title>
+            <Card.Title align='center' className='coordinatorName'>Neeldari Dhar</Card.Title>
             <Card.Text align='center'>
-            Senior member
+            Senior member<br/>
             WDCT,CCA
             </Card.Text>
           </Card.Body>
         </Card>
         </Col>
         <Col sm={3}>
-        <Card className='coordinatorCard' style={{ width: '18rem' }}>
-          <Card.Img variant="top" src="holder.js/100px180" />
+        <Card className='coordinatorCard pb-5' style={{ width: '18rem' }}>
+          <Card.Img variant="top" className='coordinatorImg' src={saikat} />
           <Card.Body>
-            <Card.Title align='center'>Saikat Sarkar</Card.Title>
+            <Card.Title align='center' className='coordinatorName'>Saikat Sarkar</Card.Title>
             <Card.Text align='center'>
-            Senior member
+            Senior member<br/>
             WDCT,CCA
             </Card.Text>
           </Card.Body>
