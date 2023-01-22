@@ -16,6 +16,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 
+import Register from "./Register";
 
 function App() {
   return (
@@ -196,6 +197,10 @@ function App() {
     <div className="footer footer-text">
     <p>Made with 💓 by Web Design & Creative Team, CCA.</p>
     </div>
+
+      <Register />  
+     
+
     </>
   );
 }
