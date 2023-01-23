@@ -10,58 +10,68 @@ import Button from 'react-bootstrap/Button';
 function Register(){
     return (
         <>
-    <div className='container'>
-      <div className='register'>
-        <h2>Register Yourself</h2>
-        <p>The workshop is free to attend and is available only for students of NIT Durgapur.</p>
+    <div className='learn container pb-5'>
+    <div className='description'>
+        <h2 className='pb-3'>Register Yourself</h2>
+        <p className='descTxt pb-3'>The workshop is free to attend and is available only for students of NIT Durgapur.</p>
       </div>
       
-      <Row className="g-2 form-box">
-      <Col md className='left-form-box'>
-        <FloatingLabel controlId="floatingInputGrid" label="First Name" > 
+      <Form>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Fiest Name</Form.Label>
           <Form.Control type="text" placeholder="Enter first name" />
-        </FloatingLabel>
-      </Col>
-      <Col md>
-      <FloatingLabel controlId="floatingInputGrid" label="Last Name">
+        </Form.Group>
+
+        <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Label>Last Name</Form.Label>
           <Form.Control type="text" placeholder="Enter last name" />
-        </FloatingLabel>
-      </Col>
-    </Row>
+        </Form.Group>
+      </Row>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Email Address</Form.Label>
+          <Form.Control type="email" placeholder="Enter email address" />
+        </Form.Group>
 
-      <Row className="g-2 form-box">
-      <Col md className='left-form-box'>
-        <FloatingLabel controlId="floatingInputGrid" label="Email address">
-          <Form.Control type="email" placeholder="Enter email" />
-        </FloatingLabel>
-      </Col>
-      <Col md>
-      <FloatingLabel controlId="floatingInputGrid" label="Phone Number">
+        <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Label>Phone Number</Form.Label>
           <Form.Control type="tel" placeholder="Enter phone number" />
-        </FloatingLabel>
-      </Col>
-    </Row>
+        </Form.Group>
+      </Row>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="formGridEmail">
+          <Form.Label>Department</Form.Label>
+          <Form.Select defaultValue="Choose...">
+            <option>Select department</option>
+            <option>Computer Science and Engineering</option>
+            <option>Electronics and Communication Engineering</option>
+            <option>Electrical Engineering</option>
+            <option>Chemical Engineering</option>
+            <option>Mechanical Engineering</option>
+            <option>Civil Engineering</option>
+            <option>Metallurgical and Materials Engineering</option>
+            <option>Biotechnology</option>
+            <option>Integrated Chemistry</option>
+          </Form.Select>
+        </Form.Group>
 
-    <Row className="g-2 form-box">
-      <Col md className='left-form-box'>
-        <FloatingLabel controlId="floatingInputGrid" label="Department">
-          <Form.Control type="text" placeholder="Enter department" />
-        </FloatingLabel>
-      </Col>
-      <Col md>
-      <FloatingLabel controlId="floatingInputGrid" label="Year of Study">
-          <Form.Control type="text" placeholder="Enter year of study" />
-        </FloatingLabel>
-      </Col>
-    </Row>
+        <Form.Group as={Col} controlId="formGridPassword">
+          <Form.Label>Year of Study</Form.Label>
+          <Form.Select defaultValue="Choose...">
+            <option>Select year of study</option>
+            <option>1st Year</option>
+            <option>2nd Year</option>
+          </Form.Select>
+        </Form.Group>
+      </Row>
 
-    <Row className="g-2">
-      <Col md>
-        <Button variant="dark" type="submit" size="lg" className='form-button'>
-          Submit
-        </Button>
-      </Col>
-    </Row>
+      
+
+      <Button variant="primary" type="submit">
+        Submit
+      </Button>
+    </Form>
     </div>
         </>
     )

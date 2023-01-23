@@ -20,6 +20,12 @@
     padding-top: 25px;
 }
 
+.ham{
+    background-color: transparent;
+    color: #00FFF0;
+    font-size: 3rem;
+}
+
 button{
     border: none;
     padding: 0;
@@ -61,14 +67,19 @@ button{
     font-weight: 400;
 }
 
-.container{
+.hBtn:hover{
+    transform: scale(1.05, 1.05);
+}
+
+.learn{
     margin-top: -120px;
+    max-width: 80%;
     box-shadow:0 0 0 2px #ccc;
     background-color: white;
     color: black;
     border-radius: 15px;
     padding: 20px 40px;
-    margin-bottom: 12%;
+    box-shadow: 0px 2px 20px rgba(7, 25, 47, 0.15);
 }
 
 .description h2{
@@ -82,6 +93,11 @@ button{
     font-weight: 500;
 }
 
+.descTxtday{
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
 .day{
     font-family: 'Inter', sans-serif;
     display: flex;
@@ -89,7 +105,7 @@ button{
 }
 
 .card{
-    box-shadow: 0px 2px 30px rgba(7, 25, 47, 0.25);
+    box-shadow: 0px 2px 30px rgba(7, 25, 47, 0.15);
 }
 
 .certificate{
@@ -112,6 +128,14 @@ button{
     align-items: center;
     padding-right: 30px;
 } */
+.mentorImg{
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25)  ;
+    border-radius: 50%;
+}
+
+.mentorTxt h4{
+    font-size: 1.25rem;
+}
 
 .coordinatorCard{
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
@@ -128,7 +152,7 @@ button{
 }
 
 .footer{
-    margin-top: 1rem;
+    margin-top: 10rem;
     padding: 1rem;
     background-color: #000000;
     width: 100%;
@@ -160,28 +184,62 @@ button{
 }
 
 @media (max-width: 590px){
+    .cca-logo{
+        height: 40px;
+        width: 40px;
+        margin-left: 25px;
+    }
+    .wdct-logo{
+        height: 60px;
+        width: 60px;
+        /* margin-top: 10px; */
+    }
     .heroText h1{
-        font-size: 50px;
+        font-size: 3rem;
+        line-height: 65px;
+    }
+    .mentorTxt h4{
+        margin-top: -0.5rem;
+        font-size: 1.1rem;
     }
     .heroText h3{
-        font-size: 15px;
+        font-size: .9rem;
     }
-    .container{
-        width: 80%;
-        margin: -130px 50px;
-        margin-bottom: 13%;
+    .ham{
+        font-size: 2rem;
+    }
+    .hBtn{
+        height: 2.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .8rem;
+        
+    }
+    .learn{
+        max-width: 92%;
+        padding: 2rem 1.5rem ;
+        box-shadow: 0px 2px 10px rgba(7, 25, 47, 0.15);
     }
     .description h2{
-        font-size: 38px;
+        font-size: 1.75rem;
     }
     .descTxt{
-        font-size: 14px;
+        font-size: 1.2rem;
+    }
+    .descTxtday{
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #666;
     }
     .day{
-        font-size: 14px;
+        font-size: 1rem;
+    }
+    .card{
+        box-shadow: 0px 2px 10px rgba(7, 25, 47, 0.15);
     }
     .description p{
-        font-size: 14px;
+        font-size: 1rem;
     }
     .card{
         margin-bottom: 6%;
