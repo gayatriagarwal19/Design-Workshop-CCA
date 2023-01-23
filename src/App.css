@@ -67,8 +67,27 @@ button{
     font-weight: 400;
 }
 
-.hBtn:hover{
+.hRBtn{
+    background-color: #00FFF0;
+    color: #07123F;
+}
+
+.hRBtn:hover{
+    background-color: #00FFF0;
+    color: #07123F;
     transform: scale(1.05, 1.05);
+}
+
+.hBtn{
+    border-color: #00FFF0;
+    color: #00FFF0;
+}
+
+.hBtn:hover{
+    border-color: #00FFF0;
+    transform: scale(1.05, 1.05);
+    background-color: transparent;
+    color: #00FFF0;
 }
 
 .learn{
@@ -183,6 +202,24 @@ button{
     margin-right: 25px;
 }
 
+.regBtn{
+    background-color: #07123F;
+    color: #00FFF0;
+    border: none;
+    width: 9rem;
+    height: 2.5rem;
+}
+
+.regBtn:hover{
+    background-color: #07123F;
+    color: #00FFF0;
+    transform: scale(1.05, 1.05);
+}
+
+.heart{
+    color: rgb(226, 66, 159);
+}
+
 @media (max-width: 590px){
     .cca-logo{
         height: 40px;
@@ -209,6 +246,14 @@ button{
         font-size: 2rem;
     }
     .hBtn{
+        height: 2.75rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: .8rem;
+        
+    }
+    .hRBtn{
         height: 2.75rem;
         display: flex;
         justify-content: center;

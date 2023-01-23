@@ -74,7 +74,7 @@ function App() {
         </div>
         <div className='d-flex justify-content-center align-items-center'>
           <Button onClick={()=> setShowLearn(true)} className='hBtn btn-md  px-5 py-3 mt-4 mx-2'  variant="outline-info">Learn More</Button>{' '}
-          <Button onClick={()=> setShowLearn(false)} className='hBtn  btn-md  px-5 py-3 mt-4 mx-2'  variant="outline-info">Register</Button>{' '}
+          <Button onClick={()=> setShowLearn(false)} className='hRBtn  btn-md  px-5 py-3 mt-4 mx-2'  variant="outline-info">Register</Button>{' '}
         </div>
       </div>
     </div>
@@ -85,8 +85,9 @@ function App() {
      <Register />  
     }
 
+
     <div className="footer footer-text d-flex justify-content-center align-items-center position-relative bottom-0">
-    <p className='mb-0 py-3' >Made with 💓 by Web Design & Creative Team, CCA.</p>
+    <p className='mb-0 py-3' >Made with <i class="heart fa-solid fa-heart"></i> by Web Design & Creative Team, CCA.</p>
     </div>
 
      

@@ -89,7 +89,7 @@ function LearnMore() {
           <Col sm={7} className='mentorTxt'>
             <h3 className='pt-2 pb-2' >Sayan Majumder</h3>
             <h4 className='pb-2'>Head, WDCT,CCA</h4>
-            <h3 className='mentorLinks'><i class="fa-brands fa-behance pe-2"></i> <i class="fa-brands fa-linkedin-in"></i> </h3>
+            <h3 className='mentorLinks'><i class="fa-brands fa-behance pe-2"></i> <i class="fa-brands fa-linkedin"></i> </h3>
           </Col>
           </Row>
         </Col>
@@ -115,7 +115,7 @@ function LearnMore() {
             Senior member<br/>
             WDCT,CCA
             </Card.Text>
-            <Card.Title align='center'><h3><i class="fa-brands fa-linkedin-in pe-2"></i> <i class="fa-brands fa-behance"></i></h3></Card.Title>
+            <Card.Title align='center'><h4><i class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-behance"></i></h4></Card.Title>
           </Card.Body>
         </Card>
         </Col>
@@ -128,7 +128,7 @@ function LearnMore() {
             Senior member<br/>
             WDCT,CCA
             </Card.Text>
-            <Card.Title align='center'><h3><i class="fa-brands fa-linkedin-in pe-2"></i> <i class="fa-brands fa-behance"></i></h3></Card.Title>
+            <Card.Title align='center'><h4><i class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-behance"></i></h4></Card.Title>
           </Card.Body>
         </Card>
         </Col>
@@ -141,7 +141,7 @@ function LearnMore() {
             Senior member<br/>
             WDCT,CCA
             </Card.Text>
-            <Card.Title align='center'><h3><i class="fa-brands fa-linkedin-in pe-2"></i> <i class="fa-brands fa-behance"></i></h3></Card.Title>
+            <Card.Title align='center'><h4><i class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-behance"></i></h4></Card.Title>
           </Card.Body>
         </Card>
         </Col>
@@ -154,7 +154,7 @@ function LearnMore() {
             Senior member<br/>
             WDCT,CCA
             </Card.Text>
-            <Card.Title align='center'><h3><i class="fa-brands fa-linkedin-in pe-2"></i> <i class="fa-brands fa-behance"></i></h3></Card.Title>
+            <Card.Title align='center'><h4><i class="fa-brands fa-linkedin"></i> <i class="fa-brands fa-behance"></i></h4></Card.Title>
           </Card.Body>
         </Card>
         </Col>
