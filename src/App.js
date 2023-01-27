@@ -35,7 +35,10 @@ function App() {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-
+  const scrollToElement = (id) => {
+    const section = document?.querySelector( `#${id}` );
+    section?.scrollIntoView( { behavior: 'smooth', block: 'start' } );    
+};
   return (
     <>
     <div id='home'>
@@ -54,15 +57,32 @@ function App() {
         <Offcanvas.Body>
           <div className='navDrop ps-2 fs-5'>
             <ul>
-              <li>
-              
+              <li
+              onClick={() => {
+                scrollToElement('desc');
+                // handleClose();
+              }}
+              >
+            
               Description
               
               </li>
               <hr/>
-              <li>Mentors</li>
+              <li
+              className='cursor-pointer'
+              onClick={() => {
+                console.log('clicked');
+                scrollToElement('mentor');
+                // handleClose();
+              }}
+              >Mentors</li>
               <hr/>
-              <li>Coordinators</li>
+              <li
+              onClick={() => {
+                // handleClose();
+                scrollToElement('coordinator');
+              }}
+              >Coordinators</li>
               <hr/>
             </ul>
           </div>
@@ -77,8 +97,8 @@ function App() {
           <h3 className='my-4'> Learn Adobe Illustrator from scratch in two days</h3>
         </div>
         <div className='d-flex justify-content-center align-items-center'>
-          <Button onClick={()=> setShowLearn(true)} className='hBtn btn-md  px-5 py-3 mt-4 mx-2'  variant="outline-info">Learn More</Button>{' '}
-          <Button onClick={()=> setShowLearn(false)} className='hRBtn  btn-md  px-5 py-3 mt-4 mx-2'  variant="outline-info">Register</Button>{' '}
+          <Button onClick={()=> setShowLearn(true)} className={showLearn ? 'hRBtn px-5 py-3 mt-4 mx-2':'hBtn px-5 py-3 mt-4 mx-2' } variant="outline-info">Learn More</Button>{' '}
+          <Button onClick={()=> setShowLearn(false)} className={!showLearn ? 'hRBtn px-5 py-3 mt-4 mx-2':'hBtn px-5 py-3 mt-4 mx-2'}  variant="outline-info">Register</Button>{' '}
         </div>
       </div>
     </div>

@@ -21,7 +21,7 @@ function LearnMore() {
   return (
     <>
     <div className='learn container pb-5'>
-      <div className='description'>
+      <div id="desc" className='description'>
         <h2 className='pb-3'>Description</h2>
         <p className='descTxt pb-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
       </div>
@@ -77,7 +77,7 @@ function LearnMore() {
         </Card>
         </Col>
       </Row>
-      <div className='description pt-5 pb-5'>
+      <div id="mentor" className='description pt-5 pb-5'>
         <h2>Mentor</h2>
       </div>
       <Row className='mentor'>
@@ -102,7 +102,7 @@ function LearnMore() {
           </p>
         </Col>
       </Row>
-      <div className='description pt-5 pb-5'>
+      <div  id ="coordinator" className='description pt-5 pb-5'>
         <h2>Coordinators</h2>
       </div>
       <Row>
