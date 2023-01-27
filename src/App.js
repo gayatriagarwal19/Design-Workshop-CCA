@@ -54,11 +54,15 @@ function App() {
         <Offcanvas.Body>
           <div className='navDrop ps-2 fs-5'>
             <ul>
-              <li>Details</li>
+              <li>
+              
+              Description
+              
+              </li>
               <hr/>
-              <li>Details</li>
+              <li>Mentors</li>
               <hr/>
-              <li>Details</li>
+              <li>Coordinators</li>
               <hr/>
             </ul>
           </div>
