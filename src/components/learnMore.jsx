@@ -23,21 +23,21 @@ function LearnMore() {
     <div className='learn container pb-5'>
       <div id="desc" className='description'>
         <h2 className='pb-3'>Description</h2>
-        <p className='descTxt pb-3'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
+        <p className='descTxt pb-3'>This Design Workshop organised by Web, Design and Creative Team, CCA brings to you 2 days full of learning and fun. Learn basics, tools and special features of Adobe Illustrator and After Effects.</p>
       </div>
       <div className='details'>
         <div className='day'>
             <p className='descTxtday pe-5'>Day1: </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
+            <p>Learn Basic Tools, effects and special features. Create characters of your own and a simple background.</p>
         </div>
         <div className='day'>
             <p className='descTxtday pe-5'>Day2: </p>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
+            <p>Learn how to animate a simple character in After Effects.</p>
         </div>
       </div>
       <div className='description py-5'>
         <h2 className='pb-3'>What’s in for you</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis culpa reprehenderit veritatis repudiandae, praesentium quae autem nihil non suscipit voluptatum explicabo, quasi officia at. Numquam nisi aspernatur quas libero ducimus?</p>
+        <p>Apart from learning the basics of design theory, you get to know more about WDCT, CCA. Every participant will be awarded with a certificate, the work of the best performers will be featured in WDCT Corner and the performers would stand an advantage in the auditions!</p>
       </div>
       <Row className='gx-5'>
         <Col sm={4}>
