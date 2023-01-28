@@ -81,19 +81,19 @@ function LearnMore() {
         <h2>Mentor</h2>
       </div>
       <Row className='mentor'>
-        <Col sm={5} className='mentor1'>
+        <Col sm={5} md={6} className='mentor1'>
           <Row>
-          <Col sm={5}>
+          <Col sm={5} md={6}>
             <img className='mentorImg' src={sayan}/>
           </Col>
-          <Col sm={7} className='mentorTxt'>
-            <h3 className='pt-2 pb-2' >Sayan Majumder</h3>
+          <Col md={6} className='mentorTxt'>
+            <h3 className='pt-2 pb-2'>Sayan Majumder</h3>
             <h4 className='pb-2'>Head, WDCT,CCA</h4>
             <h3 className='mentorLinks'><i class="fa-brands fa-behance pe-2"></i> <i class="fa-brands fa-linkedin"></i> </h3>
           </Col>
           </Row>
         </Col>
-        <Col sm={7} className='mentor2'>
+        <Col sm={7} md={6} className='mentor2'>
           <p className='pt-2'>
           Every firm has stories to tell—stories that will not only engage, inform, surprise, delight, and impact their audience, but that will also deliver on measurable goals. And I am the conduit between the firm and consumer.
           </p>

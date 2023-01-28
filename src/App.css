@@ -150,6 +150,12 @@ button{
 .mentorImg{
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25)  ;
     border-radius: 50%;
+    /* width: 150px; */
+}
+
+.mentorTxt{
+    /* display: flex; */
+    align-items: flex-end;
 }
 
 .mentorTxt h4{
