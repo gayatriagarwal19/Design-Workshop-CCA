@@ -319,3 +319,47 @@ input::placeholder,
 option::placeholder{
     font-size: 14px !important;
 }
+
+.centerV{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.centerH{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.offimg{
+    width:  2rem;
+    height: 2rem;
+    object-fit: contain;
+}
+.offa{
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+.fa-brands{
+    text-decoration: none;
+}
+.fa-facebook,
+.fa-facebook:hover{
+    color: #3b5998;
+}
+
+.fa-behance,
+.fa-behance:hover{
+    color: dodgerblue;
+}
+.fa-instagram,
+.fa-instagram:hover{
+    color: #e4405f;
+}
+.fa-linkedin,
+.fa-linkedin:hover{
+    color: #0077b5;
+}
+.fa-youtube,
+.fa-youtube:hover{
+    color: #ff0000;
+}

@@ -124,8 +124,8 @@ function LearnMore() {
                 <h3 className="pt-2 pb-2">Sayan Majumder</h3>
                 <h4 className="pb-2">Head, WDCT,CCA</h4>
                 <h3 className="mentorLinks">
-                  <i class="fa-brands fa-behance pe-2"></i>{" "}
-                  <i class="fa-brands fa-linkedin"></i>{" "}
+                  <i class="fa-brands me-1 fa-linkedin"></i>{" "}
+                  <i class="fa-brands ms-1 fa-behance"></i>{" "}
                 </h3>
               </Col>
             </Row>
@@ -168,8 +168,8 @@ function LearnMore() {
                     </Card.Text>
                     <Card.Title align="center">
                       <h4>
-                        <i class="fa-brands fa-linkedin"></i>{" "}
-                        <i class="fa-brands fa-behance"></i>
+                        <a href="" class="fa-brands mx-1 fa-linkedin" target="_blank" rel="noopener noreferrer" />{" "}
+                        <a href="" class="fa-brands mx-1 fa-behance" target="_blank" rel="noopener noreferrer" />
                       </h4>
                     </Card.Title>
                   </Card.Body>
