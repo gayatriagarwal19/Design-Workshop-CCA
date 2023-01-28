@@ -19,52 +19,172 @@ function Register() {
   const [contactNum, setContactNum] = useState("");
   const [department, setDepartment] = useState("");
 
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
   const [resType, setResType] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [errorModal, setErrorModal] = useState(false);
+  const [validated, setValidated] = useState(false);
 
   const [formVisible, setFormVisible] = useState(true);
   const submitForm = (event) => {
     console.log("submit form");
     event.preventDefault();
-    setIsLoading(true);
-    setIsOpen(true);
     //console.log(user);
+    setIsLoading(true);
 
-    // if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) === false) {
-    //   setError("Enter a valid Email");
-    //   setTimeout(() => {
-    //     const unsu = setError(null);
-    //     return unsu;
-    //   }, 5000);
-    //   setIsLoading(false);
-    //   return;
-    // }
-    // if (contactNum.length !== 10) {
-    //   setError("Mobile Number should be of 10 digits");
-    //   setTimeout(() => {
-    //     const unsu = setError(null);
-    //     return unsu;
-    //   }, 5000);
-    //   setIsLoading(false);
-    //   return;
-    // }
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email) === false) {
+      setIsOpen(true);
+      setError("Enter a valid Email");
+      setIsLoading(false);
+      return;
+    }
+    if (contactNum.length !== 10) {
+      setIsOpen(true);
+      setError("Mobile Number should be of 10 digits");
+      setIsLoading(false);
+      return;
+    }
 
-    window.grecaptcha.ready(() => {
-      window.grecaptcha
-        .execute(SITE_KEY, { action: "submit" })
-        .then((token) => {
-          console.log("Token", token);
-          sendData(token);
-        });
-    });
+    if (
+      fullName.length === 0 ||
+      roll.length === 0 ||
+      email.length === 0 ||
+      year.length === 0 ||
+      contactNum.length === 0 ||
+      department.length === 0 ||
+      year.length === 0
+    ) {
+      setIsOpen(true);
+      setError("All fields are required");
+      setIsLoading(false);
+      return;
+    }
+
+    if (department === "Select department") {
+      setIsOpen(true);
+      setError("Select a department");
+      setIsLoading(false);
+      return;
+    }
+
+    sendData("token");
+    // window.grecaptcha.ready(() => {
+    //   window.grecaptcha
+    //     .execute(SITE_KEY, { action: "submit" })
+    //     .then((token) => {
+    //       console.log("Token", token);
+    //     });
+    // });
   };
 
+  const modalBody = () => {
+    if (isLoading) {
+      <p textAlign="center" align="center">
+        <h3 textAlign="center" align="center" className="fw-normal">
+          Submitting Registration ...
+        </h3>
+        <Spinner animation="grow" className="mt-3" />
+      </p>;
+    } else {
+      if (resType === "success") {
+        return (
+          <>
+            <h1 textAlign="center" align="center" className="fw-bold">
+              Congratulations!
+            </h1>
+            <p className="modal_right_p">
+              We have successfully received your registration for two day
+              Graphic and Motion Design Workshop 2023. we will contact you very
+              soon.
+              <br />
+              <br />
+              Join the WhatsApp group if you haven't, through the link below for
+              further updates and information regarding the auditions.
+              <br />
+              <a
+                href="https://chat.whatsapp.com/LqazKksSuPB6BDo0YqJon6"
+                target="blank"
+                style={{
+                  textDecoration: "underline",
+                  color: "green",
+                  fontWeight: "bold",
+                }}
+              >
+                Join WhatsApp Group
+              </a>
+              <br />
+            </p>
+          </>
+        );
+      } else if (resType === "exists") {
+        return (
+          <>
+            <h1 className="gradient__text">Already Submitted !</h1>
+            <p className="modal_right_p">
+              You have already registered for two day Graphic and Motion Design
+              Workshop 2023 account or mobile number. We will contact you very
+              soon.
+              <br />
+              <br />
+              Join the WhatsApp group if you haven't, through the link below for
+              further updates and information regarding the auditions.
+              <br />
+              <a
+                href="https://chat.whatsapp.com/LqazKksSuPB6BDo0YqJon6"
+                target="blank"
+                style={{
+                  textDecoration: "underline",
+                  color: "green",
+                  fontWeight: "bold",
+                }}
+              >
+                Join WhatsApp Group
+              </a>
+              <br />
+            </p>
+          </>
+        );
+      } else {
+        if (error === "") {
+          return (
+            <>
+              <h1 textAlign="center" align="center" className="fw-bold">
+                Could Not Register !
+              </h1>
+              <h5
+                style={{ textAlign: "center", fontWeight: 600 }}
+                className="my-4"
+              >
+                Please try again after some time.
+                <br />
+              </h5>
+            </>
+          );
+        } else {
+          return (
+            <>
+              <h1 textAlign="center" align="center" className="fw-bold">
+                Could Not Register !
+              </h1>
+              <h5
+                style={{ textAlign: "center", fontWeight: 600 }}
+                className="my-4"
+              >
+                {error}
+                <br />
+              </h5>
+            </>
+          );
+        }
+      }
+    }
+  };
   const sendData = (token) => {
     // let formData = new FormData();
-
+    console.log("token sendData", token);
     // formData.entr
+    setIsLoading(true);
 
     let formData = {
       email: email,
@@ -91,31 +211,23 @@ function Register() {
 
     axios(config)
       .then(function (response) {
-        //console.log("axios", response.data);
         if (response.status == 201) {
           setResType("success");
         } else {
           let r = response.data;
           console.log("response of api call", r);
-          if (email != r.email && r.email != null) {
-            setResType("exists");
-          } else if (
-            contactNum != r.contact_number &&
-            r.contact_number != null
-          ) {
+          if (r?.email || r?.contact_number) {
             setResType("exists");
           } else {
             setResType("error");
           }
         }
         setIsLoading(false);
-        // setIsOpen(true);
+        setIsOpen(true);
       })
       .catch(function (error) {
-        //console.log(error);
         setResType("error");
         setIsLoading(false);
-        setIsOpen(true);
       });
   };
 
@@ -172,7 +284,11 @@ function Register() {
                 }}
                 value={fullName}
                 placeholder="Enter full name"
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid name.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group
               className="col-12 col-md-6 col-lg-6 my-2"
@@ -186,7 +302,11 @@ function Register() {
                 }}
                 value={roll}
                 placeholder="Enter Roll No"
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid roll no.
+              </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row className="mb-1">
@@ -202,7 +322,11 @@ function Register() {
                 }}
                 value={email}
                 placeholder="Enter email address"
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid email.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group
               className="col-12 col-md-6 col-lg-6 my-2"
@@ -216,7 +340,11 @@ function Register() {
                 }}
                 value={contactNum}
                 placeholder="Enter phone number"
+                required
               />
+              <Form.Control.Feedback type="invalid">
+                Please provide a valid phone number.
+              </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row className="mb-1">
@@ -230,7 +358,7 @@ function Register() {
                   setDepartment(text.target.value);
                 }}
                 value={department}
-                defaultValue="Choose..."
+                required
               >
                 <option>Select department</option>
                 <option>Computer Science and Engineering</option>
@@ -243,6 +371,9 @@ function Register() {
                 <option>Biotechnology</option>
                 <option>Integrated Chemistry</option>
               </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                Please select a valid Department.
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group
               className="col-12 col-md-6 col-lg-6 my-2"
@@ -254,25 +385,45 @@ function Register() {
                   setYear(text.target.value);
                 }}
                 value={year}
-                defaultValue="Choose..."
-                
+                required
               >
-                <option>Select year of study</option>
+                <option>Select year</option>
                 <option>1st Year</option>
                 <option>2nd Year</option>
               </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                Please select a valid year.
+              </Form.Control.Feedback>
             </Form.Group>
           </Row>
           <Row className="mx-1 mb-1">
-            <Button className="col-12 col-md-2 col-lg-2 regBtn mt-3" variant="primary" type="submit">
-              Submit
-            </Button>
+            {isLoading ? (
+              <Button
+                className="col-12 col-md-2 col-lg-2  regBtn mt-3"
+                variant="primary"
+                // type="submit"
+              >
+                <Spinner animation="grow" size="sm" />
+              </Button>
+            ) : (
+              <Button
+                className="col-12 col-md-2 col-lg-2 regBtn mt-3"
+                variant="primary"
+                type="submit"
+              >
+                Submit
+              </Button>
+            )}
           </Row>
         </Form>
       </div>
       <Modal
         show={isOpen}
-        onHide={() => setIsOpen(false)}
+        onHide={() => {
+          setIsOpen(false);
+          setResType("");
+          setError("");
+        }}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -282,89 +433,7 @@ function Register() {
             Modal heading
           </Modal.Title> */}
         </Modal.Header>
-        <Modal.Body>
-          {isLoading ? (
-            <p textAlign="center" align="center">
-              <h3 textAlign="center" align="center" className="fw-normal">
-                Submitting Registration ...
-              </h3>
-              <Spinner animation="grow" className="mt-3" />
-            </p>
-          ) : (
-            <p>
-              {resType === "success" ? (
-                <>
-                  <h1 textAlign="center" align="center" className="fw-bold">
-                    Congratulations!
-                  </h1>
-                  <p className="modal_right_p">
-                    We have successfully received your registration for two day
-                    Graphic and Motion Design Workshop 2023. we will contact you
-                    very soon.
-                    <br />
-                    <br />
-                    Join the WhatsApp group if you haven't, through the link
-                    below for further updates and information regarding the
-                    auditions.
-                    <br />
-                    <a
-                      href="https://chat.whatsapp.com/LqazKksSuPB6BDo0YqJon6"
-                      target="blank"
-                      style={{
-                        textDecoration: "underline",
-                        color: "green",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Join WhatsApp Group
-                    </a>
-                    <br />
-                  </p>
-                </>
-              ) : resType === "exists" ? (
-                <>
-                  <h1 className="gradient__text">Already Submitted !</h1>
-                  <p className="modal_right_p">
-                    You have already registered for two day Graphic and Motion
-                    Design Workshop 2023 account or mobile number. We will
-                    contact you very soon.
-                    <br />
-                    <br />
-                    Join the WhatsApp group if you haven't, through the link
-                    below for further updates and information regarding the
-                    auditions.
-                    <br />
-                    <a
-                      href="https://chat.whatsapp.com/LqazKksSuPB6BDo0YqJon6"
-                      target="blank"
-                      style={{
-                        textDecoration: "underline",
-                        color: "green",
-                        fontWeight: "bold",
-                      }}
-                    >
-                      Join WhatsApp Group
-                    </a>
-                    <br />
-                  </p>
-                </>
-              ) : (
-                <>
-                  <h1 textAlign="center" align="center" className="fw-bold">
-                    Could Not Register !
-                  </h1>
-                  <h5
-                    style={{ textAlign: "center", fontWeight: 600 }}
-                    className="my-4"
-                  >
-                    Please try again after some time.
-                    <br />
-                  </h5>
-                </>
-              )}
-            </p>
-          )}
-        </Modal.Body>
+        <Modal.Body>{modalBody()}</Modal.Body>
         <Modal.Footer>
           {/* <Button onClick={() => setIsOpen(false)}>Close</Button> */}
         </Modal.Footer>
