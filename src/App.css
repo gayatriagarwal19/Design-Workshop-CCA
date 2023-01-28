@@ -212,14 +212,12 @@ button{
     background-color: #07123F;
     color: #00FFF0;
     border: none;
-    width: 9rem;
-    height: 2.5rem;
+    padding: 0.75rem 4rem;
 }
 
 .regBtn:hover{
     background-color: #07123F;
     color: #00FFF0;
-    transform: scale(1.05, 1.05);
 }
 
 .heart{
@@ -307,4 +305,17 @@ button{
     .mentorLinks{
         margin-left: -5%;
     }
+}
+
+input,
+textarea,
+select{
+    background-color:  #f5f5f5 !important;
+    height: 3rem;
+    border: 0;
+    cursor: pointer;
+}
+input::placeholder,
+option::placeholder{
+    font-size: 14px !important;
 }

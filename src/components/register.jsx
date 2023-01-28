@@ -1,14 +1,13 @@
-import "./App.css";
 import React, { useEffect, useState } from "react";
+import "../App.css";
 
-import FloatingLabel from "react-bootstrap/FloatingLabel";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import axios from "axios";
-import Modal from 'react-bootstrap/Modal';
 import { Spinner } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
+import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import Row from "react-bootstrap/Row";
 
 const SITE_KEY = "6LdILjEkAAAAAPsRVRKAOJITqkGipk7wWFULkDVr";
 
@@ -160,11 +159,13 @@ function Register() {
         </div>
 
         <Form onSubmit={(e) => submitForm(e)}>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
+          <Row className="mb-1">
+            <Form.Group
+              className="col-12 col-md-6 col-lg-6 my-2"
+              controlId="formGridEmail"
+            >
               <Form.Label>Full Name</Form.Label>
               <Form.Control
-                style={{ backgroundColor: "#F5F5F5" }}
                 type="text"
                 onChange={(text) => {
                   setFullName(text.target.value);
@@ -173,11 +174,12 @@ function Register() {
                 placeholder="Enter full name"
               />
             </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Group
+              className="col-12 col-md-6 col-lg-6 my-2"
+              controlId="formGridPassword"
+            >
               <Form.Label>Roll No</Form.Label>
               <Form.Control
-                style={{ backgroundColor: "#F5F5F5" }}
                 type="text"
                 onChange={(text) => {
                   setRoll(text.target.value);
@@ -187,11 +189,13 @@ function Register() {
               />
             </Form.Group>
           </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
+          <Row className="mb-1">
+            <Form.Group
+              className="col-12 col-md-6 col-lg-6 my-2"
+              controlId="formGridEmail"
+            >
               <Form.Label>Email Address</Form.Label>
               <Form.Control
-                style={{ backgroundColor: "#F5F5F5" }}
                 type="email"
                 onChange={(text) => {
                   setEmail(text.target.value);
@@ -200,11 +204,12 @@ function Register() {
                 placeholder="Enter email address"
               />
             </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Group
+              className="col-12 col-md-6 col-lg-6 my-2"
+              controlId="formGridPassword"
+            >
               <Form.Label>Phone Number</Form.Label>
               <Form.Control
-                style={{ backgroundColor: "#F5F5F5" }}
                 type="tel"
                 onChange={(text) => {
                   setContactNum(text.target.value);
@@ -214,11 +219,13 @@ function Register() {
               />
             </Form.Group>
           </Row>
-          <Row className="mb-3">
-            <Form.Group as={Col} controlId="formGridEmail">
+          <Row className="mb-1">
+            <Form.Group
+              className="col-12 col-md-6 col-lg-6 my-2"
+              controlId="formGridEmail"
+            >
               <Form.Label>Department</Form.Label>
               <Form.Select
-                style={{ backgroundColor: "#F5F5F5" }}
                 onChange={(text) => {
                   setDepartment(text.target.value);
                 }}
@@ -237,16 +244,18 @@ function Register() {
                 <option>Integrated Chemistry</option>
               </Form.Select>
             </Form.Group>
-
-            <Form.Group as={Col} controlId="formGridPassword">
+            <Form.Group
+              className="col-12 col-md-6 col-lg-6 my-2"
+              controlId="formGridPassword"
+            >
               <Form.Label>Year of Study</Form.Label>
               <Form.Select
-                style={{ backgroundColor: "#F5F5F5" }}
                 onChange={(text) => {
                   setYear(text.target.value);
                 }}
                 value={year}
                 defaultValue="Choose..."
+                
               >
                 <option>Select year of study</option>
                 <option>1st Year</option>
@@ -254,10 +263,11 @@ function Register() {
               </Form.Select>
             </Form.Group>
           </Row>
-
-            <Button className="regBtn mt-3" variant="primary" type="submit">
-            Submit
-          </Button>
+          <Row className="mx-1 mb-1">
+            <Button className="col-12 col-md-2 col-lg-2 regBtn mt-3" variant="primary" type="submit">
+              Submit
+            </Button>
+          </Row>
         </Form>
       </div>
       <Modal
@@ -273,83 +283,87 @@ function Register() {
           </Modal.Title> */}
         </Modal.Header>
         <Modal.Body>
-        {
-          isLoading ?
-         <p textAlign=
-         "center" align="center"
-         >
-            <h3 textAlign="center" align="center" className="fw-normal">
-              Submitting Registration ...
-            </h3>
-            <Spinner animation="grow" className="mt-3" />
-         </p>
-          :
-          <p>
-            {resType === "success" ? (
-              <>
-                <h1 textAlign="center" align="center" className="fw-bold">
-                  Congratulations!
-                </h1>
-                <p className="modal_right_p">
-                  We have successfully received your registration for two day
-                  Graphic and Motion Design Workshop 2023. we will contact you
-                  very soon.
-                  <br />
-                  <br />
-                  Join the WhatsApp group if you haven't, through the link below
-                  for further updates and information regarding the auditions.
-                  <br />
-                  <a
-                    href="https://chat.whatsapp.com/LqazKksSuPB6BDo0YqJon6"
-                    target="blank"
-                    style={{
-                      textDecoration: "underline",
-                      color: "green",
-                      fontWeight: "bold",
-                    }}
+          {isLoading ? (
+            <p textAlign="center" align="center">
+              <h3 textAlign="center" align="center" className="fw-normal">
+                Submitting Registration ...
+              </h3>
+              <Spinner animation="grow" className="mt-3" />
+            </p>
+          ) : (
+            <p>
+              {resType === "success" ? (
+                <>
+                  <h1 textAlign="center" align="center" className="fw-bold">
+                    Congratulations!
+                  </h1>
+                  <p className="modal_right_p">
+                    We have successfully received your registration for two day
+                    Graphic and Motion Design Workshop 2023. we will contact you
+                    very soon.
+                    <br />
+                    <br />
+                    Join the WhatsApp group if you haven't, through the link
+                    below for further updates and information regarding the
+                    auditions.
+                    <br />
+                    <a
+                      href="https://chat.whatsapp.com/LqazKksSuPB6BDo0YqJon6"
+                      target="blank"
+                      style={{
+                        textDecoration: "underline",
+                        color: "green",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Join WhatsApp Group
+                    </a>
+                    <br />
+                  </p>
+                </>
+              ) : resType === "exists" ? (
+                <>
+                  <h1 className="gradient__text">Already Submitted !</h1>
+                  <p className="modal_right_p">
+                    You have already registered for two day Graphic and Motion
+                    Design Workshop 2023 account or mobile number. We will
+                    contact you very soon.
+                    <br />
+                    <br />
+                    Join the WhatsApp group if you haven't, through the link
+                    below for further updates and information regarding the
+                    auditions.
+                    <br />
+                    <a
+                      href="https://chat.whatsapp.com/LqazKksSuPB6BDo0YqJon6"
+                      target="blank"
+                      style={{
+                        textDecoration: "underline",
+                        color: "green",
+                        fontWeight: "bold",
+                      }}
+                    >
+                      Join WhatsApp Group
+                    </a>
+                    <br />
+                  </p>
+                </>
+              ) : (
+                <>
+                  <h1 textAlign="center" align="center" className="fw-bold">
+                    Could Not Register !
+                  </h1>
+                  <h5
+                    style={{ textAlign: "center", fontWeight: 600 }}
+                    className="my-4"
                   >
-                    Join WhatsApp Group
-                  </a>
-                  <br />
-                </p>
-              </>
-            ) : resType === "exists" ? (
-              <>
-                <h1 className="gradient__text">Already Submitted !</h1>
-                <p className="modal_right_p">
-                  You have already registered for two day Graphic and Motion
-                  Design Workshop 2023 account or mobile number. We will contact
-                  you very soon.
-                  <br />
-                  <br />
-                  Join the WhatsApp group if you haven't, through the link below
-                  for further updates and information regarding the auditions.
-                  <br />
-                  <a
-                    href="https://chat.whatsapp.com/LqazKksSuPB6BDo0YqJon6"
-                    target="blank"
-                    style={{
-                      textDecoration: "underline",
-                      color: "green",
-                      fontWeight: "bold",
-                    }}
-                  >
-                    Join WhatsApp Group
-                  </a>
-                  <br />
-                </p>
-              </>
-            ) : (
-              <>
-                <h1 textAlign="center" align="center" className='fw-bold'>Could Not Register !</h1>
-                <h5 style={{textAlign: "center",fontWeight: 600}} className="my-4">
-                  Please try again after some time.
-                  <br />
-                </h5>
-              </>
-            )}
-          </p>
-        }
+                    Please try again after some time.
+                    <br />
+                  </h5>
+                </>
+              )}
+            </p>
+          )}
         </Modal.Body>
         <Modal.Footer>
           {/* <Button onClick={() => setIsOpen(false)}>Close</Button> */}

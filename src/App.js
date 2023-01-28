@@ -1,32 +1,16 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import './App.css';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+import Navbar from 'react-bootstrap/Navbar';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+import './App.css';
 import cca from './assets/images/ccalogo1.png';
 import wdct from './assets/images/wdct1.png';
-import wdctCorner from './assets/images/WDCTCorner.png';
-import interview from './assets/images/undraw_interview.png';
-import certificate from './assets/images/Certificate.png';
-import sayan from './assets/images/SAYAN_MAJUMDER.png';
-import somwrik from './assets/images/SOMWRIK_DUBEY.png';
-import swarnalim from './assets/images/swarnalim_sonowal.png';
-import saikat from './assets/images/SAIKAT_SARKAR.png';
-import neeladri from './assets/images/NEELADRI_DHAR.png';
-import hamburger_btn from './assets/images/hamburger_btn.png';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Offcanvas from 'react-bootstrap/Offcanvas';
-import React, { useState } from 'react';
-import ListGroup from 'react-bootstrap/ListGroup';
 
 
 
-import Register from "./Register";
 import LearnMore from './components/learnMore';
+import Register from "./components/register";
 
 function App() {
 
