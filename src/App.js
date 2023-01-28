@@ -42,7 +42,7 @@ function App() {
               <div className='navDrop px-2 py-3 fs-5'>
                 <ul>
                   <li>
-                    <a href="https://www.ccanitd.in/" className='offa fw-semibold' target="_blank" rel="noopener noreferrer">Our Website</a>
+                    <a href="https://www.ccanitd.in/" className='offa fw-semibold text-dark' target="_blank" rel="noopener noreferrer">Our Website</a>
                   </li>
                   <hr />
                   <li>

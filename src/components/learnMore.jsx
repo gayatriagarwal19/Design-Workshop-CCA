@@ -18,18 +18,23 @@ function LearnMore() {
     {
       name: "Somwrik Dubey",
       img: somwrik,
+      be: 'https://www.behance.net/reventonhuracan',
+      li: 'https://www.linkedin.com/in/somwrik-dubey-8b35771ba/?originalSubdomain=in'
     },
 	{
 	  name: "Swarnalim Sonowal",
 	  img: swarnalim,
+    li: 'https://www.linkedin.com/in/swarnalim-sonowal-77baa120a/?originalSubdomain=in'
 	},
     {
       name: "Neeladri Dhar",
       img: neeladri,
+      li: 'https://www.linkedin.com/in/neeladri-dhar-11a7b220b/?originalSubdomain=in'
     },
     {
       name: "Saikat Sarkar",
       img: saikat,
+      li: 'https://www.linkedin.com/in/saikat-sarkar-395785205/?originalSubdomain=in'
     },
   ];
   return (
@@ -66,14 +71,13 @@ function LearnMore() {
             auditions!
           </p>
         </div>
-        <Row className="gx-5">
-          <Col sm={4}>
+        <Row className="">
+          <div className='col-lg-4 my-1'>
             <Card className="card">
               <Card.Img
                 variant="top"
                 className="certificate"
                 src={certificate}
-                style={{ width: "50%" }}
               />
               <Card.Body>
                 <Card.Title align="center">Certificate</Card.Title>
@@ -82,8 +86,8 @@ function LearnMore() {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
-          <Col sm={4}>
+          </div>
+          <div className='col-lg-4 my-1'>
             <Card className="card">
               <Card.Img className="wdctCorner" variant="top" src={wdctCorner} />
               <Card.Body>
@@ -93,14 +97,13 @@ function LearnMore() {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
-          <Col sm={4}>
+          </div>
+          <div className='col-lg-4 my-1'>
             <Card className="card">
               <Card.Img
                 variant="top"
                 className="interview"
                 src={interview}
-                style={{ width: "80%" }}
               />
               <Card.Body>
                 <Card.Title align="center">Top Performers</Card.Title>
@@ -109,7 +112,7 @@ function LearnMore() {
                 </Card.Text>
               </Card.Body>
             </Card>
-          </Col>
+          </div>
         </Row>
         <div id="mentor" className="description pt-5 pb-5">
           <h2>Mentor</h2>
@@ -124,8 +127,8 @@ function LearnMore() {
                 <h3 className="pt-2 pb-2">Sayan Majumder</h3>
                 <h4 className="pb-2">Head, WDCT,CCA</h4>
                 <h3 className="mentorLinks">
-                  <i class="fa-brands me-1 fa-linkedin"></i>{" "}
-                  <i class="fa-brands ms-1 fa-behance"></i>{" "}
+                  <a href="https://www.linkedin.com/in/sayan-majumder-6669171a5" target="_blank" rel="noopener noreferrer" class="fa-brands me-1 fa-linkedin" />{" "}
+                  <a href="https://www.behance.net/kronocreate/projects" target="_blank" rel="noopener noreferrer" class="fa-brands ms-1 fa-behance" />{" "}
                 </h3>
               </Col>
             </Row>
@@ -168,8 +171,12 @@ function LearnMore() {
                     </Card.Text>
                     <Card.Title align="center">
                       <h4>
-                        <a href="" class="fa-brands mx-1 fa-linkedin" target="_blank" rel="noopener noreferrer" />{" "}
-                        <a href="" class="fa-brands mx-1 fa-behance" target="_blank" rel="noopener noreferrer" />
+                        {
+                          coordinator?.li && <a href={""} class="fa-brands mx-1 fa-linkedin" target="_blank" rel="noopener noreferrer" />
+                        }
+                        {
+                          coordinator?.be && <a href={""} class="fa-brands mx-1 fa-behance" target="_blank" rel="noopener noreferrer" />
+                        }
                       </h4>
                     </Card.Title>
                   </Card.Body>

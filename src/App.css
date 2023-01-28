@@ -127,18 +127,35 @@ button{
     box-shadow: 0px 2px 30px rgba(7, 25, 47, 0.15);
 }
 
+.certificate,
+.wdctCorner,
+.interview{
+    height: 220px;
+    object-fit: contain;
+}
+
 .certificate{
-    margin-left: 30%;
-    margin: 5% 30%;
+    padding: 1.5rem;
 }
 
 .wdctCorner{
-    padding: 8.5% 3%;
+    padding: 1.5rem;
 }
 
 .interview{
-    padding-top: 6%;
-    margin-left: 10%;
+    padding: 2rem;
+}
+
+@media(max-width: 600px){
+    .certificate,
+    .wdctCorner,
+    .interview{
+        max-height: 180px;
+        width: 100%;
+    }
+    .interview{
+        padding: 1.5rem;
+    }
 }
 
 /* .mentor{
